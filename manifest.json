@@ -1,0 +1,35 @@
+{
+"manifest_version": 2,
+    "name": "Informed Politics",
+    "description": "A chrome extension that will highlight congressman according to their political affiliation",
+    "version": "1.0",
+    "permissions": [
+        "activeTab",
+        "storage"
+    ],
+    "browser_action": {
+        "default_icon": "icon.png",
+        "default_popup": "popup.html"
+    },
+    "background": {
+        "scripts": [
+            "thirdParty/jquery-1.12.4.min.js",
+            "thirdParty/angular.min.js",
+            "background.js"
+        ]
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "*://*/*"
+            ],
+            "js": [
+                "thirdParty/jquery-1.12.4.min.js",
+                "thirdParty/angular.min.js",
+                "content.js"
+            ],
+            "run_at": "document_end"
+        }
+    ],
+    "options_page": "options.html"
+}

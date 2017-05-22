@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app="politicsApp">
+<head>
+	<title>Informed Politics</title>
+	<link rel="stylesheet" type="text/css" href="popup.css">
+</head>
+<body>
+<div ng-controller="politicsController">
+	<h1 id="title">Legislators on this page</h1>
+	
+	<ul id="representatives">
+		<li ng-repeat="item in candinfo">
+			<div ng-class="{repub: item.party === '(R)', demo: item.party === '(D)', ind: item.party === '(I)'}">
+				<h1>{{item.party}}</h1>
+			</div>
+			<div class="cand-info">
+				<h2>{{item.name}}</h2>
+				<h2><a href="{{item.source}}">Top Donor: {{item.donor}}</a></h2>
+			</div>
+		</li>
+	</ul> 
+</div>
+<script src="thirdParty/jquery-1.12.4.min.js"></script>
+<script src="thirdParty/angular.min.js"></script>
+<script src="politicsapp.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,12 @@
+body {
+	width: 300px;
+	padding: 0 !important;
+	margin: 0 !important;
+}
+
+h1#title {
+	background-color: #343434;
+	color:#efefef;
+	margin-top: 0;
+	padding: 16px;
+}
